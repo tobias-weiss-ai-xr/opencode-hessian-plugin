@@ -1,0 +1,32 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": "allow",
+    "edit": "allow",
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "skill": "allow",
+    "task": "allow",
+    "todowrite": "allow",
+    "todoread": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "codesearch": "allow",
+    "question": "allow"
+  },
+  "model": "hessian/tud/mistral-medium-3.5-128b",
+  "provider": {
+    "hessian": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Hessian.AI",
+      "options": {
+        "baseURL": "https://api.hessian.ai/v1",
+        "apiKey": "{env:HESSIAN_API_KEY}"
+      },
+      "models": {}
+    }
+  }
+}

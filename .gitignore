@@ -1,0 +1,39 @@
+# Dependencies
+node_modules
+.bun
+
+# Build output
+dist
+build
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache
+*.tmp
+*.tmp.*
+
+# Test coverage
+coverage
+.nyc_output
+
+# Temp files
+tmp
+ temp

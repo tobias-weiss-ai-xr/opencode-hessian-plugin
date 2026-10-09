@@ -1,0 +1,21 @@
+// Installed as ~/.config/opencode/plugins/hessian-plugin.ts.
+//
+// OpenCode discovers immediate files in the plugins directory, which is why the
+// installer places this small wrapper there. No "plugin" entry in opencode.json is
+// needed for that layout. Explicit plugin configuration can also use a relative local
+// path when a project needs to opt into a plugin deliberately.
+//
+// The implementation stays nested in hessian/ so its helper modules are not themselves
+// picked up as plugins. The default export is the dual V1+V2 definition documented in
+// hessian.ts: OpenCode 2.x reads id + setup, OpenCode >=1.18.29 calls server().
+
+import plugin from "./hessian/hessian.js";
+
+export default plugin;
+
+// Files installed under ~/.config do not inherit this package's "type": "module".
+// Preserve the ESM default while also making tsx/CommonJS loaders expose the function
+// directly, as OpenCode plugin entrypoints expect.
+if (typeof module !== "undefined") {
+  module.exports = plugin;
+}

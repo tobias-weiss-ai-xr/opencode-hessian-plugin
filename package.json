@@ -1,0 +1,55 @@
+{
+  "name": "opencode-hessian-plugin",
+  "version": "0.1.0",
+  "description": "Runtime Hessian.AI plugin for OpenCode - TUD/TU Darmstadt LLM Service",
+  "type": "module",
+  "main": "./src/hessian-plugin.ts",
+  "bin": {},
+  "files": [
+    "src/",
+    "schema/",
+    "scripts/",
+    ".opencode/",
+    "install.sh",
+    "install.ps1",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "prepare-release": "bash prepare-release.sh",
+    "test": "node --import tsx --test src/*.test.mjs",
+    "sync-models": "./scripts/sync-hessian-models.sh",
+    "tsc": "tsc --noEmit --skipLibCheck"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://codeberg.org/graphwiz-ai/opencode-hessian-plugin.git"
+  },
+  "keywords": [
+    "opencode",
+    "hessian",
+    "tud",
+    "tu-darmstadt",
+    "ai",
+    "plugin",
+    "models",
+    "llm"
+  ],
+  "license": "MIT",
+  "author": "graphwiz-ai",
+  "bugs": {
+    "url": "https://codeberg.org/graphwiz-ai/opencode-hessian-plugin/issues"
+  },
+  "homepage": "https://codeberg.org/graphwiz-ai/opencode-hessian-plugin",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@opencode-ai/plugin": "^1.18.21",
+    "@opencode/plugin": "2.0.20",
+    "@types/node": "^20.0.0",
+    "tsx": "4.23.12",
+    "typescript": "5.8.2"
+  },
+  "packageManager": "bun@1.3.11"
+}

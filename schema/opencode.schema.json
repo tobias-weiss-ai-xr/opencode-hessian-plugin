@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opencode.ai/schemas/hessian-plugin.json",
+  "title": "Hessian.AI OpenCode Plugin Configuration",
+  "description": "Schema for Hessian.AI plugin configuration in OpenCode",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Schema URL"
+    },
+    "apiKey": {
+      "type": "string",
+      "description": "Hessian.AI API key. Can also be set via HESSIAN_API_KEY environment variable"
+    },
+    "apiKeyCommand": {
+      "type": "string",
+      "description": "Shell command to retrieve the API key"
+    },
+    "baseURL": {
+      "type": "string",
+      "description": "Custom API base URL",
+      "default": "https://api.hessian.ai/v1"
+    },
+    "proxyUrl": {
+      "type": "string",
+      "description": "Proxy URL for API requests"
+    },
+    "transport": {
+      "type": "string",
+      "enum": ["direct", "proxy", "custom"],
+      "description": "Transport method for API requests"
+    },
+    "profile": {
+      "type": "string",
+      "enum": ["production", "development", "dev", "budget"],
+      "description": "Model profile to use",
+      "default": "production"
+    },
+    "managedModels": {
+      "type": "object",
+      "description": "Metadata for models managed by the plugin",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "source": {"type": "string"},
+          "target": {"type": "string"},
+          "timestamp": {"type": "number"}
+        }
+      }
+    },
+    "v2ManagedModels": {
+      "type": "object",
+      "description": "Metadata for V2 models managed by the plugin"
+    },
+    "cache": {
+      "type": "object",
+      "description": "Cache configuration",
+      "properties": {
+        "enabled": {"type": "boolean", "default": true},
+        "ttlMs": {"type": "number", "default": 86400000}
+      }
+    }
+  },
+  "additionalProperties": true
+}

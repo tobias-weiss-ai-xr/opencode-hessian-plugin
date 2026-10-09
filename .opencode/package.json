@@ -1,0 +1,8 @@
+{
+  "name": "opencode-hessian-plugin",
+  "version": "0.1.0",
+  "description": "Hessian.AI plugin for OpenCode - TUD/TU Darmstadt LLM Service",
+  "dependencies": {
+    "@opencode-ai/plugin": "1.18.21"
+  }
+}
